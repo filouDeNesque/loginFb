@@ -12,6 +12,10 @@ import java.util.List;
 public class Main3Activity extends AppCompatActivity {
 
     private TextView scoresView;
+    private TextView nameView;
+    private TextView packageView;
+    private TextView levelView;
+    private TextView tipView;
     private Database db;
 
     @Override
@@ -19,12 +23,14 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        scoresView = findViewById(R.id.txtlistPlayer);
+        nameView = findViewById(R.id.txtName);
+        scoresView = findViewById(R.id.txtSore);
+        packageView = findViewById(R.id.txtPackage);
+        levelView = findViewById(R.id.txtlevel);
+        tipView = findViewById(R.id.txttip);
         db = new Database(this);
 
         Bundle pid = getIntent().getExtras();
-        final Boolean newUser = pid.getBoolean("newUser");
-
 
         final int id = pid.getInt("playerdataId");
         final String token = pid.getString("token");
@@ -36,29 +42,10 @@ public class Main3Activity extends AppCompatActivity {
         final int pack = pid.getInt("playerdataPack");
         final int level = pid.getInt("playerdataLevel");
 
-
-        //verifie le contenue a afficher si premiere connexion
-        if (newUser == true){
-            // affichage de la liste de joueur present en bd
-            List<PlayerData> scores = db.readPlayer();
-            for (PlayerData score : scores){
-
-                scoresView.append(score.toString()+ "\n\n");
-            }
-            db.close();
-        }
-        else {
-
-
-
-            scoresView.setText("Re-bonjour "+name+" \n Votre score : "+scorePlayer
-                                +" \n Votre level : "+level);
-
-        }
-
-
+        nameView.setText("Player : "+name);
+        scoresView.setText("Score : "+scorePlayer+"pt");
+        tipView.setText("Tip : "+tip+"$");
+        packageView.setText("Package : 0/"+pack);
+        levelView.setText("Level : "+level);
     }
-
-
-
 }

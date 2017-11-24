@@ -109,23 +109,36 @@ public class MainActivity extends AppCompatActivity {
                             PlayerData playerData2 = playerDatamail(playerData);
 
                             //if compare bdd(mail)
-                            if(mail.equals(playerData.getMail())){
-                                Log.d(tag,"mail present en bdd");
+                            if(mail.equals(playerData.getMail()) && ! mail.isEmpty()){
+                                Log.d(tag,"mail present en bdd = " +mail);
                                 Log.d(tag,"playerdata2score "+playerData2.getScore());
-                                Intent intent = intentConnect(playerData2);
-                                startActivity(intent);
+
+                                if (playerData2.getScore() != 0){
+                                   Intent intent = intentConnect(playerData2);
+                                   startActivity(intent);
+                               }
+                               else{
+                                    Intent intent = null;
+                                    try {
+                                        intent = intentCreate(object);
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                    startActivity(intent);
+                                }
+
                             }
 
                             //else compare bdd(mail)
                             else{
                                 Log.d(tag,"mail absent en bdd");
                                 Intent intent = null;
+                                startActivity(intent);
                                 try {
                                     intent = intentCreate(object);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-                                startActivity(intent);
                             }
                         }
 
@@ -175,11 +188,12 @@ public class MainActivity extends AppCompatActivity {
         //If already login
         if (AccessToken.getCurrentAccessToken() != null){
             //Just set User Id
-            txtEmail.setText(AccessToken.getCurrentAccessToken().getUserId());
             Log.d(tag,"already login");
-            Intent intent = new Intent(MainActivity.this,Choose_player.class);
-            intent.putExtra("token", AccessToken.getCurrentAccessToken().getUserId());
-            startActivity(intent);
+            PlayerData playerdata = new PlayerData();
+            playerdata.setToken(AccessToken.getCurrentAccessToken().getUserId());
+            PlayerData playerdata2 =playerDataToken(playerdata);
+            Intent intent1 = intentConnect(playerdata2);
+            startActivity(intent1);
 
         }
     }
@@ -224,9 +238,10 @@ public class MainActivity extends AppCompatActivity {
         return intent;
     }
 
-    public Boolean compare(String id){
+    public Boolean compare(String mail){
         Log.d(tag,"compare method");
-        final boolean compare = "".equals(id);
+        final boolean compare = mail.isEmpty();
+        Log.d(tag,"compare method = "+compare);
         return compare;
     }
 
@@ -235,13 +250,14 @@ public class MainActivity extends AppCompatActivity {
         Context context = this;
         Database db = new Database(context);
         PlayerData playerData2 = db.compareMail(playerData);
+        Log.d(tag,"playerdatamail method playerdata : "+playerData2.getName()+" / "+playerData2.getLevel());
         return playerData2;
     }
     public PlayerData playerDataToken (PlayerData playerData){
         Log.d(tag,"playerdatatoken method");
         Context context = this;
         Database db = new Database(context);
-        db.compare(playerData);
-        return playerData;
+        PlayerData playerData2 =db.compare(playerData);
+        return playerData2;
     }
 }

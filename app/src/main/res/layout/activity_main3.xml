@@ -2,15 +2,114 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="com.example.paul.log_in.Main3Activity">
 
-    <TextView
-        android:id="@+id/txtlistPlayer"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:paddingEnd="40dp"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Tooltip"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/txtSore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:paddingEnd="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/txtPackage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:paddingEnd="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/txtlevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:paddingEnd="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/txttip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="60dp"
+        android:gravity="center"
+        android:text="@string/messageAccueil"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/play"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/txtdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:paddingEnd="40dp"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Tooltip"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/txtconfomessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:paddingEnd="20dp"
+            android:text="Confomessage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/txtinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:paddingEnd="20dp"
+            android:text="txtinfo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
 
 </LinearLayout>
