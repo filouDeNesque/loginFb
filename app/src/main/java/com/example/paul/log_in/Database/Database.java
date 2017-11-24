@@ -38,7 +38,7 @@ public class Database extends SQLiteOpenHelper {
                 +" tip integer,"
                 +" package integer,"
                 +" level integer,"
-                +" when_ integer not null"
+                +" when_ long not null"
                 +")";
         db.execSQL(strSql);
         Log.i("DATABASE", "On create database invoked");

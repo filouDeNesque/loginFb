@@ -3,6 +3,7 @@ package com.example.paul.log_in.Player;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -134,52 +135,52 @@ public class PlayerData {
         return playerData;
     }
 
-    public int describeContents()
-    {
-        return 0;
-    }
-
-    public void writeToParcel(Parcel dest, int flags)
-    {
-        dest.writeInt(id);
-        dest.writeString(token);
-        dest.writeString(birthday);
-        dest.writeString(mail);
-        dest.writeString(name);
-        dest.writeInt(score);
-        dest.writeLong(when != null ? when.getTime() : -1);
-        dest.writeInt(tip);
-        dest.writeInt(pack);
-        dest.writeInt(level);
-
-    }
-
-    public static final Parcelable.Creator<PlayerData> CREATOR = new Parcelable.Creator<PlayerData>()
-    {
-        @Override
-        public PlayerData createFromParcel(Parcel source)
-        {
-            return new PlayerData(source);
-        }
-
-        @Override
-        public PlayerData[] newArray(int size)
-        {
-            return new PlayerData[size];
-        }
-    };
-
-    public PlayerData(Parcel in) {
-        this.id = in.readInt();
-        this.token = in.readString();
-        this.birthday = in.readString();
-        this.mail = in.readString();
-        this.name = in.readString();
-        this.score = in.readInt();
-        long tmpDate = in.readLong();
-        this.when = tmpDate == -1 ? null : new Date(tmpDate);
-        this.tip = in.readInt();
-        this.pack = in.readInt();
-        this.level = in.readInt();
-    }
+//    public int describeContents()
+//    {
+//        return 0;
+//    }
+//
+//    public void writeToParcel(Parcel dest, int flags)
+//    {
+//        dest.writeInt(id);
+//        dest.writeString(token);
+//        dest.writeString(birthday);
+//        dest.writeString(mail);
+//        dest.writeString(name);
+//        dest.writeInt(score);
+//        long date = when.getTime();
+//        dest.writeLong(date);
+//        dest.writeInt(tip);
+//        dest.writeInt(pack);
+//        dest.writeInt(level);
+//
+//    }
+//
+//    public static final Parcelable.Creator<PlayerData> CREATOR = new Parcelable.Creator<PlayerData>()
+//    {
+//        @Override
+//        public PlayerData createFromParcel(Parcel source)
+//        {
+//            return new PlayerData(source);
+//        }
+//
+//        @Override
+//        public PlayerData[] newArray(int size)
+//        {
+//            return new PlayerData[size];
+//        }
+//    };
+//
+//    public PlayerData(Parcel in) {
+//        this.id = in.readInt();
+//        this.token = in.readString();
+//        this.birthday = in.readString();
+//        this.mail = in.readString();
+//        this.name = in.readString();
+//        this.score = in.readInt();
+//        this.when = in.readLong();
+//        this.tip = in.readInt();
+//        this.pack = in.readInt();
+//        this.level = in.readInt();
+//    }
 }

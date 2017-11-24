@@ -86,14 +86,14 @@ public class MainActivity extends AppCompatActivity {
 
                         String mail = new String();
                         try {
-                            mail = response2.getString("mail");
+                            mail = response2.getString("email");
                             Log.d(tag,"mail = "+mail);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                         String token = new String();
                         try {
-                            token = response2.getString("token");
+                            token = response2.getString("id");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -105,12 +105,14 @@ public class MainActivity extends AppCompatActivity {
                             Log.d(tag,"if mail != de null");
                             PlayerData playerData = new PlayerData();
                             playerData.setMail(mail);
-                            playerDatamail(playerData);
+                            Log.d(tag,"playerdataMail "+playerData.getMail());
+                            PlayerData playerData2 = playerDatamail(playerData);
 
                             //if compare bdd(mail)
                             if(mail.equals(playerData.getMail())){
                                 Log.d(tag,"mail present en bdd");
-                                Intent intent = intentConnect(playerData);
+                                Log.d(tag,"playerdata2score "+playerData2.getScore());
+                                Intent intent = intentConnect(playerData2);
                                 startActivity(intent);
                             }
 
@@ -200,7 +202,16 @@ public class MainActivity extends AppCompatActivity {
     public Intent intentConnect(PlayerData playerData) {
         Log.d(tag,"intent connect method");
         Intent intent = new Intent(MainActivity.this,Main3Activity.class);
-        intent.putExtra("playerdata", (Parcelable) playerData);
+        intent.putExtra("playerdataId",playerData.getId());
+        Log.d(tag,"playerdataId "+playerData.getId());
+        intent.putExtra("playerdataToken",playerData.getToken());
+        intent.putExtra("playerdataBirthday",playerData.getBirthday());
+        intent.putExtra("playerdataMail",playerData.getMail());
+        intent.putExtra("playerdataName",playerData.getName());
+        intent.putExtra("playerdatascore",playerData.getScore());
+        intent.putExtra("playerdataTip",playerData.getTip());
+        intent.putExtra("playerdataPack",playerData.getPack());
+        intent.putExtra("playerdataLevel",playerData.getLevel());
         return intent;
     }
 
@@ -223,8 +234,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d(tag,"playerdatamail method");
         Context context = this;
         Database db = new Database(context);
-        db.compareMail(playerData);
-        return playerData;
+        PlayerData playerData2 = db.compareMail(playerData);
+        return playerData2;
     }
     public PlayerData playerDataToken (PlayerData playerData){
         Log.d(tag,"playerdatatoken method");

@@ -24,8 +24,18 @@ public class Main3Activity extends AppCompatActivity {
 
         Bundle pid = getIntent().getExtras();
         final Boolean newUser = pid.getBoolean("newUser");
+
+
+        final int id = pid.getInt("playerdataId");
         final String token = pid.getString("token");
-        PlayerData playerData = getIntent().getExtras().getParcelable("playerdata");
+        final String birthday = pid.getString("playerdataBirthday");
+        final String mail = pid.getString("playerdataMail");
+        final String name = pid.getString("playerdataName");
+        final int scorePlayer = pid.getInt("playerdatascore");
+        final int tip = pid.getInt("playerdataTip");
+        final int pack = pid.getInt("playerdataPack");
+        final int level = pid.getInt("playerdataLevel");
+
 
         //verifie le contenue a afficher si premiere connexion
         if (newUser == true){
@@ -39,16 +49,16 @@ public class Main3Activity extends AppCompatActivity {
         }
         else {
 
-            playerData.setToken(token);
 
-            playerData = db.compare(playerData);
 
-            scoresView.setText("Re-bonjour "+playerData.getName()+" \n Votre score : "+playerData.getScore()
-                                +" \n Votre level : "+playerData.getLevel());
+            scoresView.setText("Re-bonjour "+name+" \n Votre score : "+scorePlayer
+                                +" \n Votre level : "+level);
 
         }
 
 
     }
+
+
 
 }
