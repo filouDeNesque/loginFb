@@ -42,10 +42,10 @@ public class Main3Activity extends AppCompatActivity {
         final int pack = pid.getInt("playerdataPack");
         final int level = pid.getInt("playerdataLevel");
 
-        nameView.setText("Player : "+name);
-        scoresView.setText("Score : "+scorePlayer+"pt");
-        tipView.setText("Tip : "+tip+"$");
-        packageView.setText("Package : 0/"+pack);
-        levelView.setText("Level : "+level);
+        nameView.setText("Player: "+name);
+        scoresView.setText("Score: "+scorePlayer+"pt");
+        tipView.setText("Tip: "+tip+"$");
+        packageView.setText("Package: 0/"+pack);
+        levelView.setText("Level: "+level);
     }
 }
