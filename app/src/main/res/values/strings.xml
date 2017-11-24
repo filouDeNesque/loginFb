@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">log-in</string>
+
+    <string name="facebook_app_id">195765920988279</string>
+    <string name="facebook_login_protocol_scheme">fb195765920988279</string>
+    <string name="avatar">avatar</string>
+    <string name="page_2">Page 2</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="entrer_votre_pseudo">Entrer votre pseudo : </string>
+</resources>
