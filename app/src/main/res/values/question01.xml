@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name ="quest">
+        <item>"Cap ou pas cap de pousser un énorme cri dans la rue ?"</item>
+        <item>"Cap ou pas cap de baisser ton pantalon devant une foule ?"</item>
+        <item>"Cap ou pas cap de lancer une tomate à ton prof de Français ?"</item>
+        <item>"Cap ou pas cap de passer une nuit sous un pont ?"</item>
+        <item>"Cap ou pas cap de faire de la pub pour iciyatou.net sur ton blog ?"</item>
+        <item>"Cap ou pas cap de te mettre un doigt dans la bouche tout de suite ?"</item>
+        <item>"Cap ou pas cap d'appeler un inconnu au téléphone ?"</item>
+        <item>"Cap ou pas cap de te passer de ton ordi plus de 24 h ?"</item>
+        <item>"Cap ou pas cap d'embrasser quelqu'un du même sexe ?"</item>
+        <item>"Cap ou pas cap de chanter sous la douche ?</item>
+        <item>"Cap ou pas cap de dire 'Je t'Aime' à quelqu'un que t'aimes pas ?"</item>
+        <item>"Cap ou pas cap de courrir 2 heures sans t'arrêter ?"</item>
+        <item>"Cap ou pas cap de te forcer à vomir ?"</item>
+        <item>"Cap ou pas cap de fumer une cigarette ?"</item>
+        <item>"Cap ou pas cap de boire 10 bières à la suite ?"</item>
+        <item>"Cap ou pas cap de tout quitter par amour ?"</item>
+        <item>"Cap ou pas cap d'aimer une seule personne toute la vie ?"</item>
+        <item>"Cap ou pas cap de faire une photo de toi au réveil ?"</item>
+        <item>"Cap ou pas cap de monter dans le Space Mountain ?"</item>
+        <item>"Cap ou pas cap de quitter ce formulaire et de tout recommencer ?"</item>
+
+    </string-array>
+</resources>

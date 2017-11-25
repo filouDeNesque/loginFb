@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name ="rep1">
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>yes</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>yes</item>
+    </string-array>
+</resources>

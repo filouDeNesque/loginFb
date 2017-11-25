@@ -113,11 +113,11 @@ public class Database extends SQLiteOpenHelper {
 
     // fonction compare token renvoie joueur
     public PlayerData compare(PlayerData playerData){
-        PlayerData player2Data = null;
+        PlayerData player2Data = new PlayerData();
         SQLiteDatabase db = this.getReadableDatabase();
         String mQuery = "SELECT * FROM T_Users WHERE  token = ? ";
         String[] args = {playerData.getToken()};
-        Log.d("Database","playerdataGetMail = "+playerData.getToken());
+        Log.d("Database","playerdataGettoken = "+playerData.getToken());
         Cursor cursor = db.rawQuery(mQuery, args);
         if (cursor.moveToFirst() && cursor.getCount() >= 1) {
             player2Data = new PlayerData(cursor.getInt(0),
